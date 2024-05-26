@@ -25,3 +25,6 @@ puts valid_parentheses("()[]{}")  # true
 puts valid_parentheses("(]")  # false
 puts valid_parentheses("([)]")  # false
 puts valid_parentheses("{[]}")  # true
+
+large_input = "({[]})" * 10**5
+puts valid_parentheses(large_input)  # a bit of lag there when testing with large input
