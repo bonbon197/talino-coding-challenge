@@ -1,9 +1,13 @@
-# Valid Parentheses checker
+# Problem Set X: Valid Parentheses
 
-A simple script that contains the method `valid_parentheses(s)` that checks if the input string `s` has valid parentheses. The method supports round brackets `()`, curly braces `{}`, and square brackets `[]`. It also handles nested parentheses correctly.
+## Problem Description
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is
+valid. An input string is valid if:
 
-## How it works
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
 
+## Solution Overview
 The method uses a stack to keep track of the opening parentheses. For each character in the input string:
 
 - If it's an opening parenthesis, it's pushed onto the stack.
@@ -12,12 +16,8 @@ The method uses a stack to keep track of the opening parentheses. For each chara
 
 After checking all characters, the method returns `true` if the stack is empty and `false` otherwise. An empty stack means that all opening parentheses have been correctly closed.
 
-## Edge Cases
-
-The method correctly handles several edge cases:
-
-- Empty string: The method returns `true` because an empty string doesn't contain any unbalanced parentheses.
-- Single character: The method returns `false` if the string contains a single parenthesis.
-- Non-parentheses characters: The method returns `false` if the string contains characters other than parentheses.
-- Nested parentheses: The method correctly identifies valid and invalid strings with nested parentheses.
-- Unbalanced parentheses: The method returns `false` for strings with unbalanced parentheses.
+## Instructions to Run the Code
+Make sure you're within the directory of the problem set and run
+```ruby
+ruby problem_set_2.rb
+```
