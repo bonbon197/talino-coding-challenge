@@ -1,19 +1,26 @@
 def palindrome_pairs(words)
-    return [] if words.empty?
+    return "empty array" if words.empty?
     return "one word array" if words.length == 1
+
+    word_map = {}
+    words.each_with_index { |word, i| word_map[word.downcase] = i }
 
     pairs = []
 
-    words.each_with_index do |word1, i|
-        next if word1.empty?
-        words.each_with_index do |word2, j|
-            next if word2.empty?
-            next if i == j
+    words.each_with_index do |word, i|
+        m = word.length
+        word = word.downcase
 
-            concatenated = word1.downcase + word2.downcase
+        (0..m).each do |j|
+            prefix = word[0...j]
+            suffix = word[j..-1]
 
-            if concatenated == concatenated.reverse
-                pairs << [i, j]
+            if prefix == prefix.reverse && word_map.include?(suffix.reverse) && word_map[suffix.reverse] != i
+                pairs << [word_map[suffix.reverse], i]
+            end
+
+            if j != m && suffix == suffix.reverse && word_map.include?(prefix.reverse) && word_map[prefix.reverse] != i
+                pairs << [i, word_map[prefix.reverse]]
             end
         end
     end
