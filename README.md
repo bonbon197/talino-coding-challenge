@@ -26,3 +26,8 @@ You can navigate through the repository using your file explorer or the terminal
 
 To run the Ruby scripts, navigate to the directory of the problem set you want to work on using the terminal, and then run the Ruby script using the `ruby` command. For example, to run the `palindrome_pairs.rb` script, you would do:
 
+```ruby
+cd problem_set_1
+ruby palindrome_pairs.rb
+```
+
