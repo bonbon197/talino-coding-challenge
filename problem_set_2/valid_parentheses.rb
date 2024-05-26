@@ -11,6 +11,8 @@ def valid_parentheses(s)
             stack.push(char)
         elsif brackets.keys.include?(char)
             return false if stack.empty? || stack.pop != brackets[char]
+        else
+            return false
         end
     end
 
